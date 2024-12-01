@@ -2,20 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Base */
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-white text-gray-800 font-sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold;
+}
+
+/* Containers for correct positioning */
+
+.container {
+  @apply max-w-4xl mx-auto px-4;
+}
+
+.navbar-container {
+  @apply flex justify-between items-center;
+}
+
+.button-container {
+  @apply flex justify-center;
+}
+
+.img-container {
+  @apply flex justify-center
+}
+
+.header, .footer {
+  @apply text-center p-4;
+}
+
+.navbar, .post-form {
+  @apply p-4;
+}
+
+/* Links */
+
+.link {
+  @apply hover:text-teal-200 text-teal-600 text-xl font-bold;
+}
+
+.navbar-footer-link {
+  @apply hover:text-teal-200 mx-3;
+}
+
+/* Form styling */
+
+.form-input {
+  @apply border p-2 w-full mb-2 rounded-full;
+}
+
+.submit-button {
+  @apply bg-teal-500 text-white p-2 transition duration-200 ease-in-out rounded-full;
+}
+
+.submit-button:hover {
+  @apply bg-teal-600;
+}
+
+/* /[id], /about, /submit pages styling */
+
+.post-page {
+  @apply max-w-2xl mx-auto p-6 mt-8;
+}
+
+.post-title {
+  @apply text-2xl font-bold text-gray-800 mb-4;
+}
+
+.post-date {
+  @apply text-sm text-gray-500 mb-2;
+}
+
+.post-link {
+  @apply text-teal-600 hover:underline;
+}
+
+.about-text {
+  @apply flex justify-center;
+}
+
+.add-post-title {
+  @apply text-3xl font-bold mb-4 text-center;
 }
